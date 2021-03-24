@@ -42,6 +42,9 @@ class ContactsForm extends Component {
             className={s.inputName}
             type="text"
             name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+            required
             value={this.state.name}
             onChange={this.handleChange}
           />
@@ -52,6 +55,7 @@ class ContactsForm extends Component {
           <input
             type="tel"
             name="number"
+            required
             value={this.state.number}
             onChange={this.handleChange}
           />
